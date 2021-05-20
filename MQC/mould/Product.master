@@ -1,0 +1,24 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/mould/Web.Master" AutoEventWireup="true" CodeBehind="Product.master.cs" Inherits="MQC.NestedMasterPage1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <asp:ContentPlaceHolder ID="head2" runat="server">
+        <%--<script type="text/javascript">
+            $(document).ready(function () {
+                $("#mainMenu2").addClass("active");
+            });
+        </script>--%>
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Hold" runat="server">
+    <div id="subMenu1" class="tab-stacked col-md-2">      
+        <ul class="nav nav-pills nav-stacked">
+            <li id="subMenu2-1" role="presentation"><a href="../product/Search.aspx">产品主数据</a></li>
+            <li id="subMenu2-2" role="presentation"><a href="../cavity/Search.aspx">工装模具主数据</a></li>
+            <li id="subMenu2-3" role="presentation"><a href="../check/Search.aspx">产品检验项</a></li>
+        </ul>
+    </div> 
+    <div class="container col-md-offset-1 col-md-8 form-horizontal" style="padding-top:100px">
+         <asp:ContentPlaceHolder ID="Product" runat="server">
+
+        </asp:ContentPlaceHolder>  
+     </div>
+</asp:Content>
