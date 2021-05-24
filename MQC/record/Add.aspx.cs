@@ -87,7 +87,7 @@ namespace MQC.record
         }
         protected void BtnError_Click(object sender, EventArgs e)
         {
-            CavityNo = GridView2.Rows[0].Cells[0].Text;
+            CavityNo = ((Label)GridView2.Rows[0].FindControl("Label2")).Text.ToString();
             using (DbAppDataContext db = new DbAppDataContext())
             {
                 var temp = from m in db.Record_Cavity
@@ -153,7 +153,7 @@ namespace MQC.record
         {
             string strResult="";
             int id = (int)GridView2.DataKeys[e.RowIndex].Value;
-            CavityNo = ((Label)GridView2.Rows[0].FindControl("Label1")).Text.ToString();
+            CavityNo = ((Label)GridView2.Rows[e.RowIndex].FindControl("Label1")).Text.ToString();
             bool run = true;
             using(DbAppDataContext db =new DbAppDataContext())
             {

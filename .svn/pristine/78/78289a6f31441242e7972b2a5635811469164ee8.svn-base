@@ -1,0 +1,19 @@
+.tab-stacked{
+    padding-top: 80px;
+    padding-left: 0px;
+    max-width: 200px;
+}
+@media (min-width: 1200px) {
+    .container {
+    width: 1100px;
+  }
+}
+
+.textarea{
+    height:200px;
+    width:300px;
+}
+
+.gridview-text{
+    width:100px;
+}

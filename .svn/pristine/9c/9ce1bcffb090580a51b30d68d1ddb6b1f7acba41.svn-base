@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>\\VICOSRV4\VS2008 Projects\MQC</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/MQC.dll">
+      <publishTime>12/21/2015 15:05:36</publishTime>
+    </File>
+    <File Include="bin/MQC.pdb">
+      <publishTime>12/21/2015 15:05:36</publishTime>
+    </File>
+    <File Include="cavity/Add.aspx">
+      <publishTime>12/21/2015 14:21:38</publishTime>
+    </File>
+    <File Include="cavity/add.html">
+      <publishTime>12/01/2015 09:14:09</publishTime>
+    </File>
+    <File Include="cavity/delete.html">
+      <publishTime>12/01/2015 09:14:09</publishTime>
+    </File>
+    <File Include="cavity/Detail.aspx">
+      <publishTime>12/21/2015 14:21:38</publishTime>
+    </File>
+    <File Include="cavity/edit.html">
+      <publishTime>12/01/2015 09:14:09</publishTime>
+    </File>
+    <File Include="cavity/Search.aspx">
+      <publishTime>12/21/2015 14:21:49</publishTime>
+    </File>
+    <File Include="check/Add.aspx">
+      <publishTime>12/21/2015 14:22:29</publishTime>
+    </File>
+    <File Include="check/add.html">
+      <publishTime>12/01/2015 13:33:47</publishTime>
+    </File>
+    <File Include="check/delete.html">
+      <publishTime>12/01/2015 13:33:47</publishTime>
+    </File>
+    <File Include="check/Detail.aspx">
+      <publishTime>12/21/2015 14:22:29</publishTime>
+    </File>
+    <File Include="check/edit.html">
+      <publishTime>12/01/2015 13:33:47</publishTime>
+    </File>
+    <File Include="check/Search.aspx">
+      <publishTime>12/21/2015 14:22:29</publishTime>
+    </File>
+    <File Include="check/Server.ashx">
+      <publishTime>12/18/2015 17:20:34</publishTime>
+    </File>
+    <File Include="css/bootstrap.css">
+      <publishTime>12/10/2015 17:37:23</publishTime>
+    </File>
+    <File Include="css/bootstrap.min.css">
+      <publishTime>12/10/2015 17:37:23</publishTime>
+    </File>
+    <File Include="css/style.css">
+      <publishTime>12/21/2015 13:49:12</publishTime>
+    </File>
+    <File Include="DataClasses1.dbml">
+      <publishTime>12/21/2015 12:16:18</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>12/21/2015 15:04:31</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>12/10/2015 17:37:24</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>12/10/2015 17:37:24</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>12/10/2015 17:37:24</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>12/10/2015 17:37:24</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>12/10/2015 17:37:24</publishTime>
+    </File>
+    <File Include="Index.aspx">
+      <publishTime>12/21/2015 12:01:52</publishTime>
+    </File>
+    <File Include="js/additional-method.js">
+      <publishTime>12/10/2015 17:37:24</publishTime>
+    </File>
+    <File Include="js/bootstrap.min.js">
+      <publishTime>12/01/2015 13:33:47</publishTime>
+    </File>
+    <File Include="js/jquery-2.1.4.min.js">
+      <publishTime>12/10/2015 17:37:24</publishTime>
+    </File>
+    <File Include="js/message-cn.js">
+      <publishTime>12/10/2015 17:37:24</publishTime>
+    </File>
+    <File Include="js/script.js">
+      <publishTime>12/09/2015 11:16:35</publishTime>
+    </File>
+    <File Include="js/validate.js">
+      <publishTime>12/10/2015 17:37:24</publishTime>
+    </File>
+    <File Include="mould/Product.master">
+      <publishTime>12/16/2015 13:11:41</publishTime>
+    </File>
+    <File Include="mould/Web.Master">
+      <publishTime>12/21/2015 14:19:53</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>12/14/2015 15:43:20</publishTime>
+    </File>
+    <File Include="product/add.aspx">
+      <publishTime>12/21/2015 14:20:41</publishTime>
+    </File>
+    <File Include="product/delete.html">
+      <publishTime>12/10/2015 17:37:23</publishTime>
+    </File>
+    <File Include="product/Detail.aspx">
+      <publishTime>12/21/2015 14:20:41</publishTime>
+    </File>
+    <File Include="product/edit.html">
+      <publishTime>12/10/2015 17:37:23</publishTime>
+    </File>
+    <File Include="product/Search.aspx">
+      <publishTime>12/21/2015 14:20:41</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>12/10/2015 17:37:24</publishTime>
+    </File>
+    <File Include="Scripts/cavity.js">
+      <publishTime>12/16/2015 15:16:08</publishTime>
+    </File>
+    <File Include="Scripts/check.js">
+      <publishTime>12/21/2015 09:50:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.0.js">
+      <publishTime>12/14/2015 15:43:15</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.0.min.js">
+      <publishTime>12/14/2015 15:43:15</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.0.min.map">
+      <publishTime>12/14/2015 15:43:15</publishTime>
+    </File>
+    <File Include="Scripts/product.js">
+      <publishTime>12/16/2015 13:10:22</publishTime>
+    </File>
+    <File Include="Scripts/script.js">
+      <publishTime>12/21/2015 11:12:06</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/21/2015 15:05:42</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

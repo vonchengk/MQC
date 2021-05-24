@@ -1,0 +1,137 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace MQC.check
+{
+    public partial class Detail : System.Web.UI.Page
+    {
+        static string getMaktx,getMold;
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if(!IsPostBack)
+            {
+                if (Request.FilePath.ToString() == "/check/Search.aspx")
+                {
+                    Search data;
+                    data = (Search)Context.Handler;
+                    getMaktx = data.Maktx;
+                    getMold = data.Mold;
+                    Bind();
+                }
+                else
+                {
+                    Add data;
+                    data = (Add)Context.Handler;
+                    getMaktx = data.Maktx;
+                    getMold = data.Mold;
+                    Bind();
+                }
+               
+            }
+        }
+
+        protected void Add_Click(object sender, EventArgs e)
+        {
+            Maktx = getMaktx;
+            Mold = getMold;
+            Server.Transfer("Add.aspx");
+        }
+        public void Bind()
+        {
+            using(DbAppDataContext db =new DbAppDataContext())
+            {
+                var dtlist = from m in db.Check
+                             where m.Maktx == getMaktx && m.Mold==getMold && m.Del == 0
+                             select new Detail { CheckId = m.Id, No = m.No, Type = m.Type, Tool = m.Tool, Maktx = m.Maktx, Mold=m.Mold, Content = m.Content, L_Toler = (double)m.L_Toler, U_Toler = (double)m.U_Toler, L_Limit1 = (double)m.L_Limit1, U_Limit1 = (double)m.U_Limit1, L_Limit2 = (double)m.L_Limit2, U_Limit2 = (double)m.U_Limit2 };
+                if (dtlist.ToList().Count == 0)
+                {
+                    DivGrid.InnerHtml = "<p>没有找到数据</p>"; GridView1.Visible = false;
+                }
+                else
+                {
+                    GridView1.Visible = true;
+                    var dtlist1 = dtlist.ToList();
+                    GridView1.DataSource = dtlist.ToList();
+                    GridView1.DataBind();
+                }
+            }
+        }
+
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            string id = GridView1.DataKeys[e.RowIndex].Value.ToString();
+            using (DbAppDataContext db = new DbAppDataContext())
+            {
+                Check data = db.Check.SingleOrDefault(c => c.Id == int.Parse(id));
+                data.Del = 1;
+                data.ChangeDate = DateTime.Now;
+                db.SubmitChanges();
+                Bind();
+            }
+        }
+
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            GridView1.EditIndex = -1;
+            Bind();
+        }
+
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GridView1.EditIndex = e.NewEditIndex;
+            Bind();
+        }
+
+        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            string strLowT,strUpT;
+            string id = GridView1.DataKeys[e.RowIndex].Value.ToString();
+            using (DbAppDataContext db = new DbAppDataContext())
+            {
+                Check data = db.Check.SingleOrDefault(c => c.Id == int.Parse(id)); 
+                data.No = int.Parse(((TextBox)GridView1.Rows[e.RowIndex].FindControl("TbNo")).Text.ToString().Trim());
+                data.Type=((TextBox)GridView1.Rows[e.RowIndex].FindControl("TbType")).Text.ToString().Trim();
+                data.Tool = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TbTool")).Text.ToString().Trim();
+                data.L_Toler = double.Parse(((TextBox)GridView1.Rows[e.RowIndex].FindControl("TbL_Toler")).Text.ToString().Trim());
+                data.U_Toler = double.Parse(((TextBox)GridView1.Rows[e.RowIndex].FindControl("TbU_Toler")).Text.ToString().Trim());
+                data.L_Limit2 = double.Parse(((TextBox)GridView1.Rows[e.RowIndex].FindControl("TbL_Toler")).Text.ToString().Trim());
+                data.U_Limit2 = double.Parse(((TextBox)GridView1.Rows[e.RowIndex].FindControl("TbU_Toler")).Text.ToString().Trim());
+                data.ChangeDate = DateTime.Now;
+                strLowT = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TbL_Limit1")).Text.ToString().Trim();
+                strUpT = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TbU_Limit1")).Text.ToString().Trim();
+                if(!String.IsNullOrEmpty(strLowT) && strLowT!="0")
+                {
+                    data.L_Limit1 = double.Parse(strLowT);
+                    data.L_Limit2 = double.Parse(strLowT);
+                }
+                else
+                {
+                    data.L_Limit1 = 0;
+                }
+                if (!String.IsNullOrEmpty(strUpT) && strUpT != "0")
+                {
+                    data.U_Limit1 = double.Parse(strUpT);
+                    data.U_Limit2 = double.Parse(strUpT);
+                }
+                else
+                {
+                    data.U_Limit1 = 0;
+                }
+                db.SubmitChanges();
+                GridView1.EditIndex = -1;
+                Bind();
+            }
+            
+        }
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            Bind();
+        }
+    }
+}

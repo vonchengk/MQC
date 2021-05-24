@@ -25,50 +25,40 @@ namespace MQC.product
             string[] matnr = Matnr.Value.Split('|');
             using(DbAppDataContext db =new DbAppDataContext())
             {
-                run = IsNoRun(maktx);
-                if(run==true)
+                for (int i = 0; i < maktx.Length; i++)
                 {
-                    for (int i = 0; i < maktx.Length; i++)
+                    run = IsNoRun(maktx[i]);
+                    if (run == true)
                     {
-                        run = IsNoRun(maktx);
-                        if (run == true)
-                        {
-                            Product data = new Product();
-                            data.Customer = customer;
-                            data.Series = series;
-                            data.Standard = standard;
-                            data.Version = version;
-                            data.Maktx = maktx[i].ToUpper().Trim();
-                            data.Matnr = matnr[i].ToUpper().Trim();
-                            data.CreateDate = DateTime.Now;
-                            db.Product.InsertOnSubmit(data);
-                            db.SubmitChanges();
-                        }
-                        else
-                        {
-                            Response.Write("<script> var temp='" + maktx[i] + "';alert(temp+'已存在,此数据将不会被导入');</script>");
-                        }
+                        Product data = new Product();
+                        data.Customer = customer;
+                        data.Series = series;
+                        data.Standard = standard;
+                        data.Version = version;
+                        data.Maktx = maktx[i].ToUpper().Trim();
+                        data.Matnr = matnr[i].ToUpper().Trim();
+                        data.CreateDate = DateTime.Now;
+                        db.Product.InsertOnSubmit(data);
+                        db.SubmitChanges();
                     }
-                    Response.Write("<script>alert('成功');window.location='Search.aspx'</script>");
+                    else
+                    {
+                        Response.Write("<script> var temp='" + maktx[i] + "';alert(temp+'已存在,此数据将不会被导入');</script>");
+                    }              
                 }
-
+                Response.Write("<script>alert('创建完成');window.location='Search.aspx'</script>");
             }
         }
 
-        public  bool IsNoRun(string[] maktx)
+        public  bool IsNoRun(string maktx)
         {
             bool run = true;
             using (DbAppDataContext db = new DbAppDataContext())
             {
-                for (int j = 0; j < maktx.Length; j++)
+                Product data = db.Product.SingleOrDefault(c => c.Maktx == maktx);
+                if (data != null)
                 {
-                    Product data = db.Product.SingleOrDefault(c => c.Maktx == maktx[j]);
-                    if (data != null)
-                    {
-                        Response.Write("<script> var temp='" + maktx[j] + "';alert(temp+'已存在');</script>");
-                        run = false;
-                        break;
-                    }
+                    run = false;
                 }
                 return run;
             }

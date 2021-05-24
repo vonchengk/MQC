@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MQC" EntityNamespace="MQC" ContextNamespace="MQC" Class="DbAppDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=VICOSRV4\MSXST;Initial Catalog=MQC;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MQCConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Customer" Member="Customer">
+    <Type Name="Customer">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Product" Member="Product">
+    <Type Name="Product">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Maktx" Type="System.String" DbType="NVarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Matnr" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Customer" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Series" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Standard" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Del" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChangeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cavity" Member="Cavity">
+    <Type Name="Cavity">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Mold" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Num" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Maktx" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SerialNo" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="PS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Del" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Check]" Member="Check">
+    <Type Name="Check">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="No" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tool" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="L_Toler" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="U_Toler" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="L_Limit1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="U_Limit1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="L_Limit2" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="U_Limit2" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Content" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Del" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Maktx" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreatDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChangeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Mold" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

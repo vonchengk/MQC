@@ -1,0 +1,41 @@
+.tab-stacked{
+    padding-top: 80px;
+    padding-left: 0px;
+    max-width: 200px;
+}
+@media (min-width: 1200px) {
+    .container {
+    width: 1300px;
+  }
+}
+
+.textarea{
+    height:200px;
+    width:300px;
+}
+
+.gridview-text-50{
+    width:50px;
+}
+.gridview-text-100{
+    width:100px;
+}
+.page td{
+    margin: 0px 5px;
+    padding:0px 5px;
+}
+.row.row{
+   /*margin-top:10px;*/
+   margin-bottom:0; 
+}
+.row [class*="col-"]{
+    padding-top:5px;
+    padding-bottom:5px;
+    background-color:rgba(86,61,124,0.15);
+    border:1px solid rgba(86,61,124,0.2);
+}
+#container1,#container2,#container3{
+    margin-bottom:20px;
+    margin-left:50px;
+    margin-top:20px;
+}

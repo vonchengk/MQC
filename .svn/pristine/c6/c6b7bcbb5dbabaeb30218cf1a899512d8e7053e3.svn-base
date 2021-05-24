@@ -1,0 +1,71 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/mould/Product.master" AutoEventWireup="true" CodeBehind="Add.aspx.cs" Inherits="MQC.check.Add" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="Product" runat="server">
+    <form id="form1" runat="server">
+        <div class="form-group">
+            <label id="Label1" class="col-md-2 control-label">序号</label>
+            <div class="col-md-3">
+                <input id="Series" type="text" class="form-control input-sm" runat="server" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label id="Label2" class="col-md-2 control-label">检验类型</label>
+            <div class="col-md-3">
+                <input id="Text1" type="text" class="form-control input-sm" runat="server" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label id="Label3" class="col-md-2 control-label">检验内容</label>
+            <div class="col-md-3">
+                <input id="Text2" type="text" class="form-control input-sm" runat="server" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label id="Label4" class="col-md-2 control-label">检验工具</label>
+            <div class="col-md-3">
+                <input id="Text3" type="text" class="form-control input-sm" runat="server" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label id="Label5" class="col-md-2 control-label">图纸下公差</label>
+            <div class="col-md-3">
+                <input id="Text4" type="text" class="form-control input-sm" runat="server" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label id="Label6" class="col-md-2 control-label">图纸上公差</label>
+            <div class="col-md-3">
+                <input id="Text5" type="text" class="form-control input-sm" runat="server" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label id="Label7" class="col-md-2 control-label">特采下限</label>
+            <div class="col-md-3">
+                <input id="Text6" type="text" class="form-control input-sm" runat="server" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label id="Label8" class="col-md-2 control-label">特采上限</label>
+            <div class="col-md-3">
+                <input id="Text7" type="text" class="form-control input-sm" runat="server" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label id="Label9" class="col-md-2 control-label">判定下限</label>
+            <div class="col-md-3">
+                <input id="Text8" type="text" class="form-control input-sm" runat="server" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label id="Label10" class="col-md-2 control-label">判定上限</label>
+            <div class="col-md-3">
+                <input id="Text9" type="text" class="form-control input-sm" runat="server" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">
+                <asp:Button ID="Save" CssClass="btn btn-default" runat="server" Text="保存" OnClick="Save_Click" />
+            </div>
+        </div>
+    </form>
+</asp:Content>

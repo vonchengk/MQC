@@ -1,0 +1,23 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/mould/Product.master" AutoEventWireup="true" CodeBehind="Detail.aspx.cs" Inherits="MQC.cavity.Detail" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="Product" runat="server">
+    <form id="form1" runat="server">
+        <div class="form-group">
+            <a class="btn btn-default" href="Search.aspx">返回</a>
+            <asp:GridView ID="GridView1" runat="server" DataKeyNames="ID" AutoGenerateColumns="False" OnRowDeleting="GridView1_RowDeleting" OnRowCommand="GridView1_RowCommand">
+                <Columns>
+                    <asp:BoundField DataField="Cid" HeaderText="ID" SortExpression="Cid" />
+                    <asp:BoundField DataField="Mold" HeaderText="工装模具编号" SortExpression="Mold" />
+                    <asp:BoundField DataField="Maktx" HeaderText="产品编号" SortExpression="Maktx" />
+                    <asp:BoundField DataField="Num" HeaderText="数据组(型腔数)" SortExpression="Num" />
+                    <asp:BoundField DataField="PS" HeaderText="工装模具备注" SortExpression="PS" />
+                    <asp:CommandField SelectText="编辑" ShowSelectButton="True" />
+                    <asp:TemplateField ShowHeader="False">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Delete" Text="删除" OnClientClick="if(confirm('是否确定删除？')){return true;}else{return false;}"></asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+        </div>
+    </form>
+</asp:Content>

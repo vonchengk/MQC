@@ -1,0 +1,48 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/mould/Product.master" AutoEventWireup="true" CodeBehind="Search.aspx.cs" Inherits="MQC.check.Search" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="Product" runat="server">
+<%--    <form id="formSearch" runat="server">   --%>  
+        <div class="form-group">
+            <label id="Label1" class="col-md-2 control-label" runat="server">产品编号</label>
+            <div id="DivMaktx">
+                <div class="col-md-3 has-feedback">
+                    <input id="TbSearchMaktx" type="text" class="form-control input-sm" runat="server" />
+                    <span  id="SpnMaktx" class="form-control-feedback" aria-hidden="true"></span> 
+                </div>
+                <div class="col-md-1">
+                    <button id="SearchMaktx" class="btn btn-default">查询模具号</button>
+                </div>
+                <label id="LbMaktx" class="col-md-2 control-label"></label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label id="Label2" class="col-md-2 control-label" runat="server">模具号</label>
+            <div class="col-md-3">
+                <input id="TbMold" type="text" class="form-control input-sm" runat="server" />
+                <select id="SelMold" name="Select" class="form-control input-sm" style="display:none">
+                    
+                </select> 
+                <%--<div id="DivDrop">
+                    <asp:DropDownList ID="DropMold" CssClass="form-control input-sm" runat="server">
+                        <asp:ListItem>1</asp:ListItem>
+                    </asp:DropDownList>
+                </div>--%>
+                
+            </div>
+        </div>
+        <div id="DivMsg" class="form-group has-feedback">
+            <div class="col-md-2"></div>
+            <label id="LbMsg" class="col-md-2 control-label" runat="server"></label>
+        </div>
+        <div class="form-group">
+            <div class="col-md-2"></div>
+            <%--<div class="col-md-1">
+                <asp:Button ID="Create_btn" CssClass="btn btn-default" runat="server" Text="新建" OnClick="Create_btn_Click"  />
+            </div>--%>
+            <div class="col-md-1">
+                <asp:Button ID="Search_btn" CssClass="btn btn-default" runat="server" Text="查询" OnClick="Search_btn_Click"  />
+            </div>
+        </div>
+
+
+ <%--   </form>--%>
+</asp:Content>

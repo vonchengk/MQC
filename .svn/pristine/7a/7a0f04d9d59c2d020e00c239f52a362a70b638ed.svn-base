@@ -1,0 +1,47 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="MQC.Index" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/style.css"/>
+    <script type="text/javascript" src="../Scripts/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="../Scripts/script.js"></script>
+    <script type="text/javascript" src="../Scripts/product.js"></script>
+
+    <title></title>
+</head>
+<body>
+    <a href="product/Search.aspx">登录</a>
+<form id="form1" class="form-horizontal" runat="server">
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="UserName" runat="server" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="Password" runat="server"/>
+        </div>
+    </div>
+    <%--<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+        <label>
+            <input type="checkbox"> Remember me
+        </label>
+        </div>
+    </div>
+    </div>--%>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <asp:Button ID="SignIn" CssClass="btn btn-default" runat="server" Text="登录" OnClick="SignIn_Click" />
+        </div>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/mould/Web.Master" AutoEventWireup="true" CodeBehind="Send.master.cs" Inherits="MQC.mould.Send" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <%--<script type="text/javascript">
+        $(document).ready(function () {
+            $("#mainMenu3").addClass("active");
+        });
+    </script>--%>
+    <asp:ContentPlaceHolder ID="head2" runat="server">
+
+    </asp:ContentPlaceHolder>   
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Hold" runat="server">
+     <div id="subMenu1" class="tab-stacked col-md-2">      
+        <ul class="nav nav-pills nav-stacked">
+            <li id="subMenu2-1" role="presentation"><a href="../send/Add.aspx">送检批次创建</a></li>
+            <li id="subMenu2-2" role="presentation"><a href="#">检验进度看板(生产)</a></li>
+        </ul>
+    </div> 
+    <div class="container col-md-10 form-horizontal" style="padding-top:100px">
+         <asp:ContentPlaceHolder ID="SendMaster" runat="server">
+
+        </asp:ContentPlaceHolder>  
+     </div>
+</asp:Content>

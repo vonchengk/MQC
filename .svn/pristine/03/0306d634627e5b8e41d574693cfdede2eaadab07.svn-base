@@ -1,0 +1,18 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/mould/Web.Master" AutoEventWireup="true" CodeBehind="Record.master.cs" Inherits="MQC.mould.Record" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Hold" runat="server">
+    <div id="subMenu1" class="tab-stacked col-md-2">      
+        <ul class="nav nav-pills nav-stacked">
+            <li id="subMenu2-1" role="presentation"><a href="#">检验进度看板(质检)</a></li>
+            <li id="subMenu2-2" role="presentation"><a href="../record/Add.aspx">检验输入</a></li>
+            <li id="subMenu2-3" role="presentation"><a href="#">记录查询</a></li>
+            <li id="subMenu2-4" role="presentation"><a href="#">数据分析</a></li>
+        </ul>
+    </div>
+    <div class="container col-md-10 form-horizontal" style="padding-top:100px">
+         <asp:ContentPlaceHolder ID="Record1" runat="server">
+
+        </asp:ContentPlaceHolder>  
+    </div> 
+</asp:Content>

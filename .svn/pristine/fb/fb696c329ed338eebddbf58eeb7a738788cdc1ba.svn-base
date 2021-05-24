@@ -1,0 +1,94 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace MQC.record
+{
+    public partial class Detail : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if(!IsPostBack)
+            {
+                Bind(0);
+            }
+        }
+        public void Bind(int status)
+        {
+             using(DbAppDataContext db =new DbAppDataContext())
+                {
+                    var list = from m in db.Record
+                               where m.Status == status && m.Del == 0
+                               select new { Rid = m.Id, Batch = m.Batch, Maktx = m.Maktx, Customer = m.Customer};
+                    var result = list.ToList();
+                    GridView1.DataSource = result;
+                    GridView1.DataBind();
+                }
+        }
+        protected void WaitCheck_Click(object sender, EventArgs e)
+        {
+            Bind(0);
+        }
+        protected void Checking_Click(object sender, EventArgs e)
+        {
+            Bind(1);
+        }
+        protected void Back_Click(object sender, EventArgs e)
+        {
+            Bind(2);
+        }
+        protected void Complete_Click(object sender, EventArgs e)
+        {
+            Bind(3);
+        }
+
+        protected void BtnStart_Click(object sender, EventArgs e)
+        {
+            ChangeStatus(GridView1, 0, 1);
+        }
+
+        protected void BtnReturn_Click(object sender, EventArgs e)
+        {
+            ChangeStatus(GridView1, 1, 2);
+        }
+
+        protected void BtnEnd_Click(object sender, EventArgs e)
+        {
+            ChangeStatus(GridView1, 1, 3);
+        }
+
+        public void ChangeStatus(GridView GridView1,int nowStatus,int toStatus)
+        {
+            bool cbx = false;
+            int  rid;
+            for(int i=0;i<GridView1.Rows.Count;i++)
+            {
+                cbx = ((CheckBox)GridView1.Rows[i].FindControl("CheckBox1")).Checked;
+                if(cbx)
+                {
+                    rid = int.Parse(((Label)GridView1.Rows[i].FindControl("Label1")).Text);
+                    using(DbAppDataContext db =new DbAppDataContext())
+                    {
+                        Record data = db.Record.SingleOrDefault(c => c.Id == rid);
+                        data.Status = toStatus;
+                        db.SubmitChanges();
+                    }
+                }
+            }
+            Bind(nowStatus);
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if(e.CommandName=="Select")
+            {
+                int id = Convert.ToInt32(e.CommandArgument.ToString());
+                string batch = ((Label)GridView1.Rows[id].FindControl("LbBatch")).Text;
+                Response.Redirect("Add.aspx?batch=" + batch + "");
+            }
+        }
+    }
+}

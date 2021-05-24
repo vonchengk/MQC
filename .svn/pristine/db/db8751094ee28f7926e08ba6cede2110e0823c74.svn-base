@@ -1,0 +1,13 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/mould/Record.master" AutoEventWireup="true" CodeBehind="Add.aspx.cs" Inherits="MQC.record.Add" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="Record1" runat="server">
+    <div class="form-group">
+            <label id="Label1" class="col-md-2 control-label" runat="server">工装模具编号</label>
+            <div id="DivMold">
+                <div class="col-md-3 has-feedback">
+                    <input id="TbMold" type="text" class="form-control input-sm" runat="server" />
+                    <span  id="SpnMold" class="form-control-feedback" aria-hidden="true"></span> 
+                </div>
+                <label id="LbMold" class="col-md-2 control-label"></label>
+            </div>
+        </div>
+</asp:Content>

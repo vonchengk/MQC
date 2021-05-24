@@ -1,0 +1,23 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/mould/Product.master" AutoEventWireup="true" CodeBehind="Search.aspx.cs" Inherits="MQC.check.Search" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="Product" runat="server">
+    <form id="formSearch" runat="server">     
+        <div class="form-group">
+            <label id="Label1" class="col-md-2 control-label" runat="server">产品编号</label>
+            <div class="col-md-3">
+                <input id="TbMaktx" type="text" class="form-control input-sm" runat="server" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label id="Label2" class="col-md-2 control-label" runat="server">模具号</label>
+            <div class="col-md-3">
+                <input id="TbMold" type="text" class="form-control input-sm" runat="server" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-2"></div>
+            <div class="col-md-3">
+                <asp:Button ID="Search_btn" CssClass="btn btn-default" runat="server" Text="查询" OnClick="Search_btn_Click"  />
+            </div>
+        </div>
+    </form>
+</asp:Content>

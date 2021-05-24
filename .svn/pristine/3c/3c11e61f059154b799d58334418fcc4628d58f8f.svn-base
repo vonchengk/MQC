@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Web.master.cs" Inherits="MQC.Web" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">   
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/style.css"/>
+    <script type="text/javascript" src="../Scripts/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="../Scripts/script.js"></script>
+    <script type="text/javascript" src="../Scripts/product.js"></script>
+    <script type="text/javascript" src="../Scripts/cavity.js"></script>
+    <script type="text/javascript" src="../Scripts/check.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>质量检验系统</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+       
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <%--<form id="form1" runat="server">--%>
+    <nav class= "navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+              <!-- 自适应隐藏导航展开按钮 -->
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <!-- 导航条LOGO -->
+              <a class="navbar-brand" href="#">质量检验系统</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav mainMenu">
+                    <li id="mainMenu1"><a href="#">后台管理</a></li>
+                    <li id="mainMenu2"><a href="#">主数据管理</a></li>
+                    <li id="mainMenu3"><a href="#">送检管理</a></li>
+                    <li id="mainMenu4"><a href="#">检验记录</a></li>
+                    <li id="mainMenu5"><a href="#">检验进度看板</a></li>
+                </ul>
+            </div>
+       </div>
+    </nav>
+    <div class="subMenu col-md-12">
+        <asp:ContentPlaceHolder ID="Hold" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <%--</form>--%>
+</body>
+</html>

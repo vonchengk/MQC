@@ -29,7 +29,7 @@ namespace MQC.check
             using(DbAppDataContext db =new DbAppDataContext())
             {
                 Check data = new Check();
-                data.No = int.Parse(TbNo.Value.ToString());
+                data.No = double.Parse(TbNo.Value.ToString());
                 data.Type = TbType.Value.ToString();
                 data.Content = TbContent.Value.ToString();
                 data.Tool = TbTool.Value.ToString();

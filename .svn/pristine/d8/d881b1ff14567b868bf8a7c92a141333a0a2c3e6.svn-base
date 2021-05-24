@@ -1,0 +1,59 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace MQC.product
+{
+    public partial class add : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Save_Click(object sender, EventArgs e)
+        {
+            bool isNoRun = true;
+            string customer = Customer.Text.Trim().ToString();
+            string series = Series.Value.Trim().ToString();
+            string standard = Standard.Value.Trim().ToString();
+            string version = Version.Value.Trim().ToString();
+            string[] maktx = Maktx.Value.Split(',');
+            string[] matnr = Matnr.Value.Split(',');
+            using(DbAppDataContext db =new DbAppDataContext())
+            {
+                for (int j = 0; j < maktx.Length;j++ )
+                {
+                    Product data = db.Product.SingleOrDefault(c => c.Maktx == maktx[j]);
+                    if(data!=null)
+                    {
+                        Response.Write("<script> var temp='" + maktx[j] + "';alert(temp+'已存在');</script>");
+                        isNoRun = false;
+                        break;
+                    }
+                }
+                if(isNoRun==true)
+                {
+                    for (int i = 0; i < maktx.Length; i++)
+                    {
+                        Product data = new Product();
+                        data.Customer = customer;
+                        data.Series = series;
+                        data.Standard = standard;
+                        data.Version = version;
+                        data.Maktx = maktx[i];
+                        data.Matnr = matnr[i];
+                        data.CreateDate = DateTime.Now;
+                        db.Product.InsertOnSubmit(data);
+                        db.SubmitChanges();
+                    }
+                    Response.Write("<script>alert('成功');</script>");
+                }
+                   
+            }
+        }
+    }
+}

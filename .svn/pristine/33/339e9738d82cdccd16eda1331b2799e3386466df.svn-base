@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace MQC.cavity
+{
+    public partial class Search : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Search_btn_Click(object sender, EventArgs e)
+        {
+            Maktx = TbMaktx.Value.ToString().Trim();
+            Mold = TbMold.Value.ToString().Trim();
+            Server.Transfer("Detail.aspx");
+        }
+    }
+}

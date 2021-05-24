@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace MQC.check
+{
+    public partial class Search
+    {
+        private string maktx, standard;
+        public string Maktx
+        {
+            get { return maktx; }
+            set { maktx = value; }
+        }
+        public string Standard
+        {
+            get { return standard; }
+            set { standard = value; }
+        }
+    }
+}
