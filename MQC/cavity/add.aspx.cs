@@ -86,6 +86,7 @@ namespace MQC.cavity
                     data.SerialNo = TxtSerial.Value.ToString().Trim();
                     db.Cavity.InsertOnSubmit(data);
                     db.SubmitChanges();
+                    Response.Write("<script>alert('创建完成');window.location='Detail.aspx'</script>");
                 }
                 
             }
@@ -115,6 +116,7 @@ namespace MQC.cavity
                 if (searchData != null)
                 {
                     Response.Write("<script> var temp1='" + a + "'; var temp2 ='" + b + "';alert('产品编号：'+temp1+'  模具号：'+temp2+'已存在');</script>");
+                    result = false;
                 }
             }
             return result;

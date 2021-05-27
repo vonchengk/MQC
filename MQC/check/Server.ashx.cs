@@ -18,7 +18,7 @@ namespace MQC.check
             context.Response.ContentType = "text/plain";
             using (DbAppDataContext db = new DbAppDataContext())
             {
-                var list= from m in db.Check
+                var list= from m in db.Cavity
                           where maktx==m.Maktx && m.Del==0
                           select new Mold{Name=m.Mold};
                 var result = list.Distinct().ToList();

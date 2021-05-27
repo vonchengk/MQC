@@ -127,12 +127,19 @@
     //    $(this).addClass("active");
     //});
     $("#LiCreate").click(function () {
+        $(".display-control").css("display", "none");
+        $("#DivCreate").css("display", "block");
+        $("#DivSearch").css("display", "none");
+    });
+    $("#LiCopy").click(function () {
+        $(".display-control").css("display", "block");
         $("#Label1").text("复制产品编号");
         $("#Label2").text("复制模具编号");
         $("#DivCreate").css("display", "block");
         $("#DivSearch").css("display", "none");
     });
     $("#LiSearch").click(function () {
+        $(".display-control").css("display", "block");
         $("#Label1").text("产品编号");
         $("#Label2").text("模具编号");
         $("#DivCreate").css("display", "none");

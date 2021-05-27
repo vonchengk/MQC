@@ -21,12 +21,13 @@
         <div class="col-md-offset-2">
             <ul class="nav nav-pills nav3">
                 <li id="LiCreate" role="presentation" class="active"><a href="#">新建</a></li>
+                <li id="LiCopy" role="presentation"><a href="#">复制</a></li>
                 <li id="LiSearch" role="presentation"><a href="#">查询/修改</a></li>
             </ul>
         </div>
         
         <br /><br />
-        <div class="form-group">
+        <div class="form-group display-control" style="display:none">
             <label id="Label1" class="col-md-2 control-label">复制产品编号</label>
             <div id="DivMaktx">
                 <div class="col-md-3 has-feedback">
@@ -36,7 +37,7 @@
                 <label id="LbMaktx" class="col-md-2 control-label"></label>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group display-control" style="display:none">
             <label id="Label2" class="col-md-2 control-label">复制模具编号</label>
             <div id="DivMold">
                 <div class="col-md-3 has-feedback">
