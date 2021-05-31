@@ -30,7 +30,7 @@ namespace MQC.check
             {
                 Check data = new Check();
                 data.No = double.Parse(TbNo.Value.ToString());
-                data.Type = TbType.Value.ToString();
+                data.Type = TbType1.Text.ToString();
                 data.Content = TbContent.Value.ToString();
                 data.Tool = TbTool.Value.ToString();
                 data.L_Toler = double.Parse(TbL_Toler.Value.ToString());

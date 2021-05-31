@@ -40,13 +40,13 @@ namespace MQC.check {
         protected global::System.Web.UI.HtmlControls.HtmlInputText TbNo;
         
         /// <summary>
-        /// TbType 控件。
+        /// TbType1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TbType;
+        protected global::System.Web.UI.WebControls.DropDownList TbType1;
         
         /// <summary>
         /// TbContent 控件。

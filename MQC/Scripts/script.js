@@ -276,7 +276,7 @@ function SearchData(maktx) {
         } else {
             var mold = $.parseJSON(data);
             lb.text("");
-            $("#SelMold").css("display", "block");
+            $("#SelMold").css("display", "block").empty();
             $("#Hold_Product_TbMold").css("display", "none").text("");
             for (var i = 0; i < mold.length; i++)
             {

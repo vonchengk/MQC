@@ -35,7 +35,11 @@
             <label id="Label2" class="col-md-2 control-label">检验类型</label>
             <div id="DivType">
                 <div class="col-md-3 has-feedback">
-                    <input id="TbType" type="text" class="form-control input-sm" runat="server" />
+                    <%--<input id="TbType" type="text" class="form-control input-sm" runat="server" />--%>
+                    <asp:DropDownList ID="TbType1" CssClass="form-control input-sm" runat="server" >
+                        <asp:ListItem>计量</asp:ListItem>
+                        <asp:ListItem>计数</asp:ListItem>
+                    </asp:DropDownList>
                     <span  id="SpnType" class="form-control-feedback" aria-hidden="true"></span> 
                 </div>
                 <label id="LbType" class="col-md-2 control-label"></label>
