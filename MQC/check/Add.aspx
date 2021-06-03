@@ -9,7 +9,13 @@
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="Product" runat="server">
   <%--  <form id="form1" runat="server">--%>
-         <div class="form-group">
+        <div class="form-group">
+            <div class="col-md-3">
+                <a type="button" class="btn btn-default" href="Detail.aspx">返回</a>
+            </div>
+            <asp:Label ID="LbMsg" CssClass="col-md-2 control-label" runat="server" Text="Label"></asp:Label>
+        </div>
+        <div class="form-group">
             <label id="Label0" class="col-md-2 control-label">产品编号</label>
             <div class="col-md-3">
                 <input id="TbMaktx" type="text" class="form-control input-sm" runat="server" readonly="true" />

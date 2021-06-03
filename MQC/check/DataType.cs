@@ -95,6 +95,7 @@ namespace MQC.check
     public partial class Add
     {
         private string maktx, mold;
+        private double no;
 
         public string Maktx
         {
@@ -105,6 +106,11 @@ namespace MQC.check
         {
             get { return mold; }
             set { mold = value; }
+        }
+        public double No
+        {
+            get { return no; }
+            set { no = value; }
         }
     }
 }

@@ -108,7 +108,8 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="判定下限" SortExpression="L_Limit2">
                     <EditItemTemplate>
-                        <asp:TextBox ID="TbL_Limit2" runat="server" CssClass="form-control" Text='<%# Bind("L_Limit2") %>'></asp:TextBox>
+<%--                        <asp:TextBox ID="TbL_Limit2" runat="server" CssClass="form-control" Text='<%# Bind("L_Limit2") %>'></asp:TextBox>--%>
+                        <asp:Label ID="TbL_Limit2" runat="server" Text='<%# Bind("L_Limit2") %>'></asp:Label>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label9" runat="server" Text='<%# Bind("L_Limit2") %>'></asp:Label>
@@ -118,7 +119,8 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="判定上限" SortExpression="U_Limit2">
                     <EditItemTemplate>
-                        <asp:TextBox ID="TbU_Limit2" runat="server" CssClass="form-control" Text='<%# Bind("U_Limit2") %>'></asp:TextBox>
+<%--                        <asp:TextBox ID="TbU_Limit2" runat="server" CssClass="form-control" Text='<%# Bind("U_Limit2") %>'></asp:TextBox>--%>
+                        <asp:Label ID="TbU_Limit2" runat="server"  Text='<%# Bind("U_Limit2") %>'></asp:Label>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label10" runat="server"  Text='<%# Bind("U_Limit2") %>'></asp:Label>
