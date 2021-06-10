@@ -11,7 +11,7 @@
   <%--  <form id="form1" runat="server">--%>
         <div class="form-group">
             <div class="col-md-3">
-                <a type="button" class="btn btn-default" href="Detail.aspx">返回</a>
+                <asp:Button ID="BtnBack" CssClass="btn btn-default" runat="server" Text="返回" OnClick="BtnBack_Click" />
             </div>
             <asp:Label ID="LbMsg" CssClass="col-md-2 control-label" runat="server" Text="Label"></asp:Label>
         </div>

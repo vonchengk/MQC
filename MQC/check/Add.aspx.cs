@@ -50,8 +50,8 @@ namespace MQC.check
                 data.Type = TbType1.Text.ToString();
                 data.Content = TbContent.Value.ToString();
                 data.Tool = TbTool.Value.ToString();
-                data.L_Toler = double.Parse(TbL_Toler.Value.ToString());
-                data.U_Toler = double.Parse(TbU_Toler.Value.ToString());
+                data.L_Toler = GetToler(TbL_Toler.Value.ToString());
+                data.U_Toler = GetToler(TbU_Toler.Value.ToString());
                 limit = GetLimitData(TbL_Toler.Value.ToString(), TbL_Limit1.Value.ToString());
                 data.L_Limit1 = limit[0];
                 data.L_Limit2 = limit[1];
@@ -68,10 +68,23 @@ namespace MQC.check
                 Server.Transfer("Detail.aspx");
             }
         }
-
+        public double GetToler(string toler)
+        {
+            double result=0;
+            if(toler.Length==0){}
+            else
+            {
+                result = double.Parse(toler);
+            }
+             return result;
+        }
         public double[] GetLimitData(string toler,string limit1)
         {
             double[] limit = new double[2];
+            if(toler.Length==0)
+            {
+                toler = "0";
+            }
             if(!String.IsNullOrEmpty(limit1))
             {
                 limit[0] = double.Parse(limit1);
@@ -82,6 +95,13 @@ namespace MQC.check
                 limit[1] = double.Parse(toler);
             }
             return limit;
+        }
+
+        protected void BtnBack_Click(object sender, EventArgs e)
+        {
+            Maktx = getMaktx;
+            Mold = getmold;
+            Server.Transfer("Detail.aspx");
         }
     }
 }

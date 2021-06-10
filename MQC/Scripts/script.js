@@ -195,15 +195,16 @@ function CheckTool() {
 
 function CheckL_Toler() {
     var txt = $("#Hold_Product_TbL_Toler");
+    var type = $("#Hold_Product_TbType1");
     var lb = $("#LbL_Toler");
     var spn = $("#SpnL_Toler");
     var div = $("#DivL_Toler");
     var re = /^[0-9]+(.[0-9]{1,3})?$/;
-    if (txt.val() == "") {
+    if (txt.val() == "" && type.val()=="计量") {
         lb.text("请输入下公差");
         ErrorCheck(spn, div);
         return false;
-    } else if (re.test(txt.val().trim()) == false) {
+    } else if (re.test(txt.val().trim()) == false && type.val() == "计量") {
         lb.text("输入类型必须是数字");
         ErrorCheck(spn, div);
         return false;
@@ -215,15 +216,16 @@ function CheckL_Toler() {
 
 function CheckU_Toler() {
     var txt = $("#Hold_Product_TbU_Toler");
+    var type = $("#Hold_Product_TbType1");
     var lb = $("#LbU_Toler");
     var spn = $("#SpnU_Toler");
     var div = $("#DivU_Toler");
     var re = /^[0-9]+(.[0-9]{1,3})?$/;
-    if (txt.val() == "") {
+    if (txt.val() == "" && type.val() == "计量") {
         lb.text("请输入上公差");
         ErrorCheck(spn, div);
         return false;
-    } else if (re.test(txt.val().trim()) == false) {
+    } else if (re.test(txt.val().trim()) == false && type.val() == "计量") {
         lb.text("输入类型必须是数字");
         ErrorCheck(spn, div);
         return false;
