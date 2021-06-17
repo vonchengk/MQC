@@ -110,9 +110,9 @@ namespace MQC.check
                 if (run == true)
                 {
                     data.No = double.Parse(strNo);
-                    data.L_Toler = double.Parse(strL_Toler);
+                    data.L_Toler = TolerIsNoNull(strL_Toler);
                     data.L_Limit2 = double.Parse(strL_Toler);
-                    data.U_Toler = double.Parse(strU_Toler);
+                    data.U_Toler = TolerIsNoNull(strU_Toler);
                     data.U_Limit2 = double.Parse(strU_Toler); 
                     if (!String.IsNullOrEmpty(strLowT) && strLowT != "0")
                     {
@@ -160,6 +160,16 @@ namespace MQC.check
                
             }
             return run;
+        }
+
+        public double TolerIsNoNull(string toler)
+        {
+            double result=0;
+            if(!String.IsNullOrEmpty(toler))
+            {
+                result = double.Parse(toler);
+            }
+            return result;
         }
     }
 }
